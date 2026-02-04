@@ -35,7 +35,7 @@
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
-            <p class="text-sm text-slate-500 mb-6">Wprowadź dane, aby umożliwić auto-nadpisywanie pliku index.html w Twoim repozytorium.</p>
+            <p class="text-sm text-slate-500 mb-6">Wprowadź dane, aby umożliwić nadpisywanie pliku index.html w Twoim repozytorium po kliknięciu przycisku.</p>
             <div class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Personal Access Token</label>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="flex gap-3 mt-8">
-                <button onclick="saveSettings()" class="w-full bg-indigo-600 text-white px-4 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-colors">Zapisz i aktywuj synchronizację</button>
+                <button onclick="saveSettings()" class="w-full bg-indigo-600 text-white px-4 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-colors">Zapisz ustawienia</button>
             </div>
         </div>
     </div>
@@ -82,7 +82,6 @@
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Main Content Area -->
             <div class="lg:col-span-2 space-y-6">
                 <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-8 opacity-5" id="bg-icon"><i data-lucide="rocket" size="120"></i></div>
@@ -99,7 +98,6 @@
                 </div>
             </div>
 
-            <!-- Sidebar / Metrics -->
             <div class="space-y-6">
                 <div class="bg-slate-900 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
                     <div class="relative z-10">
@@ -120,7 +118,7 @@
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
                     <h2 class="text-2xl font-bold text-slate-900">Checklista Moich Postępów</h2>
-                    <p class="text-slate-500" id="status-msg">Monitoruj realizację konkretnych zadań operacyjnych</p>
+                    <p class="text-slate-500" id="status-msg">Zapisuj zmiany przyciskiem u góry po zakończeniu edycji.</p>
                 </div>
                 <div class="flex gap-2">
                     <input type="text" id="task-input" placeholder="Wpisz nowe zadanie..." class="px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full md:w-64">
@@ -168,7 +166,7 @@
                 icon: "bar-chart-3",
                 actions: [
                     { title: "Szkolenia Specjalistyczne", desc: "Ukończenie kursów z zakresu integracji i wizualizacji danych.", icon: "trending-up" },
-                    { title: "Analiza Potrzeb", desc: "Identyfikacja 'wąskich gardeł' w raportowaniu zespołu.", icon: "search" },
+                    { title: "Analiza Potrzeb", desc: "Identyfikacja 'wąskich gardeł' in raportowaniu zespołu.", icon: "search" },
                     { title: "Projekt & Development", desc: "Stworzenie dedykowanego dashboardu Looker Studio.", icon: "bar-chart-3" },
                     { title: "Wdrożenie i Feedback", desc: "Implementacja narzędzia do codziennej pracy.", icon: "check-circle-2" }
                 ],
@@ -209,12 +207,23 @@
             lucide.createIcons();
         }
 
+        // Zmodyfikowane funkcje - usunięto maybeAutoSync()
         function addTask() { 
             const input = document.getElementById('task-input'); 
-            if (input.value.trim()) { tasks.push({ id: Date.now(), text: input.value.trim(), completed: false }); input.value = ''; renderChecklist(); maybeAutoSync(); }
+            if (input.value.trim()) { 
+                tasks.push({ id: Date.now(), text: input.value.trim(), completed: false }); 
+                input.value = ''; 
+                renderChecklist(); 
+            }
         }
-        function toggleTask(id) { tasks = tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t); renderChecklist(); maybeAutoSync(); }
-        function deleteTask(id) { tasks = tasks.filter(t => t.id !== id); renderChecklist(); maybeAutoSync(); }
+        function toggleTask(id) { 
+            tasks = tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t); 
+            renderChecklist(); 
+        }
+        function deleteTask(id) { 
+            tasks = tasks.filter(t => t.id !== id); 
+            renderChecklist(); 
+        }
 
         // --- GITHUB SYNC LOGIC ---
         function toggleSettings() { document.getElementById('settings-modal').classList.toggle('active'); }
@@ -226,14 +235,13 @@
             localStorage.setItem('gh-path', document.getElementById('gh-path').value.trim() || 'index.html');
             toggleSettings();
             updateStatusMsg();
-            syncToGitHub();
         }
 
         function updateStatusMsg() {
             const hasConfig = localStorage.getItem('gh-token') && localStorage.getItem('gh-owner') && localStorage.getItem('gh-repo');
             const msg = document.getElementById('status-msg');
-            msg.textContent = hasConfig ? "Auto-zapis aktywny." : "Skonfiguruj ustawienia GitHub (zębatka), aby włączyć auto-zapis.";
-            msg.className = hasConfig ? "text-emerald-600 font-medium" : "text-slate-500";
+            msg.textContent = hasConfig ? "Ręczna synchronizacja gotowa." : "Skonfiguruj ustawienia GitHub (zębatka), aby umożliwić zapis.";
+            msg.className = hasConfig ? "text-indigo-600 font-medium" : "text-slate-500";
         }
 
         async function syncToGitHub() {
@@ -244,7 +252,10 @@
             const btn = document.getElementById('sync-btn');
             const icon = document.getElementById('sync-icon');
 
-            if (!token || !owner || !repo) return;
+            if (!token || !owner || !repo) {
+                toggleSettings();
+                return;
+            }
 
             btn.classList.add('opacity-50', 'pointer-events-none');
             icon.classList.add('spinner');
@@ -267,30 +278,34 @@
                     method: 'PUT',
                     headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        message: "Auto-save career plan progress",
+                        message: "Manual save of development plan progress",
                         content: btoa(unescape(encodeURIComponent(updatedContent))),
                         sha: sha
                     })
                 });
 
                 if (putRes.ok) {
-                    btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i> Zapisano!';
+                    btn.innerHTML = '<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Zapisano!';
                     setTimeout(() => { 
                         btn.innerHTML = '<i data-lucide="refresh-cw" id="sync-icon" class="w-4 h-4"></i> Synchronizuj z GitHub'; 
                         lucide.createIcons(); 
                     }, 3000);
+                } else {
+                    throw new Error("Błąd podczas wysyłania na GitHub");
                 }
             } catch (e) {
                 console.error(e);
                 btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4 text-red-400"></i> Błąd zapisu';
+                setTimeout(() => { 
+                    btn.innerHTML = '<i data-lucide="refresh-cw" id="sync-icon" class="w-4 h-4"></i> Synchronizuj z GitHub'; 
+                    lucide.createIcons(); 
+                }, 3000);
             } finally {
                 btn.classList.remove('opacity-50', 'pointer-events-none');
                 icon.classList.remove('spinner');
                 lucide.createIcons();
             }
         }
-
-        function maybeAutoSync() { if(localStorage.getItem('gh-token')) syncToGitHub(); }
 
         // --- Tabs Logic ---
         function switchTab(tab) {
@@ -312,6 +327,10 @@
                 </div>`).join('');
             lucide.createIcons();
         }
+
+        document.getElementById('task-input')?.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') addTask();
+        });
 
         window.onload = () => {
             document.getElementById('gh-token').value = localStorage.getItem('gh-token') || '';
