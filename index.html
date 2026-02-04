@@ -9,25 +9,43 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .tab-active {
-            background-color: #4f46e5;
-            color: white;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-        }
-
-        .completed-task {
-            text-decoration: line-through;
-            color: #94a3b8;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .tab-active { background-color: #4f46e5; color: white; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .completed-task { text-decoration: line-through; color: #94a3b8; }
+        .btn-github { background-color: #24292f; color: white; transition: all 0.2s; }
+        .btn-github:hover { background-color: #000; transform: translateY(-1px); }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 50; align-items: center; justify-content: center; }
+        .modal.active { display: flex; }
     </style>
 </head>
 
 <body class="bg-slate-50 text-slate-900 min-h-screen p-4 md:p-8">
+
+    <!-- Modal Ustawień GitHub -->
+    <div id="settings-modal" class="modal p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl">
+            <h3 class="text-xl font-bold mb-4">Ustawienia Auto-zapisu GitHub</h3>
+            <p class="text-sm text-slate-500 mb-6">Wprowadź dane, aby plik mógł sam się nadpisywać w Twoim repozytorium.</p>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">GitHub Personal Access Token</label>
+                    <input type="password" id="gh-token" placeholder="ghp_..." class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Użytkownik (np. oliwiazelazna-create)</label>
+                    <input type="text" id="gh-owner" placeholder="Twój login" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Repozytorium (np. cele-rozwoju-2026)</label>
+                    <input type="text" id="gh-repo" placeholder="Nazwa repo" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+                </div>
+            </div>
+            <div class="flex gap-3 mt-8">
+                <button onclick="toggleSettings()" class="flex-1 px-4 py-2 rounded-xl border border-slate-200 font-bold hover:bg-slate-50">Anuluj</button>
+                <button onclick="saveSettings()" class="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-xl font-bold hover:bg-indigo-700">Zapisz</button>
+            </div>
+        </div>
+    </div>
 
     <div class="max-w-5xl mx-auto">
         <!-- Header -->
@@ -36,114 +54,71 @@
                 <h1 class="text-3xl font-bold text-slate-900 tracking-tight">Karta Rozwoju Zawodowego</h1>
                 <p class="text-slate-500 mt-1">Planowanie ścieżki eksperckiej 2026</p>
             </div>
-            <div class="flex bg-white p-1 rounded-xl shadow-sm border border-slate-200">
-                <button onclick="switchTab('seo')" id="btn-seo"
-                    class="px-6 py-2 rounded-lg text-sm font-semibold transition-all tab-active">
-                    SEO Expert
+            <div class="flex flex-wrap gap-3 items-center">
+                <button onclick="syncToGitHub()" id="sync-btn" class="btn-github px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 shadow-sm">
+                    <i data-lucide="refresh-cw" class="w-4 h-4"></i> Synchronizuj z GitHub
                 </button>
-                <button onclick="switchTab('analytics')" id="btn-analytics"
-                    class="px-6 py-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:bg-slate-50">
-                    Analityka
+                <button onclick="toggleSettings()" class="bg-white p-2 rounded-xl border border-slate-200 hover:bg-slate-50 shadow-sm text-slate-600">
+                    <i data-lucide="settings" class="w-5 h-5"></i>
                 </button>
+                <div class="flex bg-white p-1 rounded-xl shadow-sm border border-slate-200">
+                    <button onclick="switchTab('seo')" id="btn-seo" class="px-6 py-2 rounded-lg text-sm font-semibold transition-all tab-active">SEO Expert</button>
+                    <button onclick="switchTab('analytics')" id="btn-analytics" class="px-6 py-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:bg-slate-50">Analityka</button>
+                </div>
             </div>
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Main Content Area -->
             <div class="lg:col-span-2 space-y-6">
                 <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 relative overflow-hidden">
-                    <!-- Background Decoration -->
-                    <div class="absolute top-0 right-0 p-8 opacity-5" id="bg-icon">
-                        <i data-lucide="rocket" size="120"></i>
-                    </div>
-
+                    <div class="absolute top-0 right-0 p-8 opacity-5" id="bg-icon"><i data-lucide="rocket" size="120"></i></div>
                     <div class="flex items-center gap-3 mb-6">
-                        <span
-                            class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                            Cel Główny
-                        </span>
-                        <div class="flex items-center text-slate-400 text-sm">
-                            <i data-lucide="calendar" class="w-4 h-4 mr-1"></i>
-                            <span id="deadline">Grudzień 2026</span>
-                        </div>
+                        <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Cel Główny</span>
+                        <div class="flex items-center text-slate-400 text-sm"><i data-lucide="calendar" class="w-4 h-4 mr-1"></i><span id="deadline">Grudzień 2026</span></div>
                     </div>
-
                     <h2 class="text-2xl font-bold mb-4" id="main-title">Rozwój Kompetencji Seniorskich SEO</h2>
-                    <p class="text-slate-600 leading-relaxed mb-8 text-lg italic" id="vision">
-                        "Samodzielne prowadzenie zaawansowanych działań technicznych, contentowych i biznesowych na
-                        poziomie Senior."
-                    </p>
-
+                    <p class="text-slate-600 leading-relaxed mb-8 text-lg italic" id="vision">"Samodzielne prowadzenie zaawansowanych działań technicznych, contentowych i biznesowych na poziomie Senior."</p>
                     <div class="space-y-4">
-                        <h3 class="font-semibold text-slate-800 flex items-center gap-2">
-                            <i data-lucide="target" class="w-5 h-5 text-indigo-500"></i> Kluczowe Akcje:
-                        </h3>
-                        <div id="actions-container" class="grid gap-3">
-                            <!-- Actions will be injected here by JS -->
-                        </div>
+                        <h3 class="font-semibold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-5 h-5 text-indigo-500"></i> Kluczowe Akcje:</h3>
+                        <div id="actions-container" class="grid gap-3"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Sidebar / Metrics -->
             <div class="space-y-6">
                 <div class="bg-slate-900 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
-                    <div class="relative z-10">
-                        <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                            <i data-lucide="trending-up" class="w-6 h-6 text-indigo-400"></i> Mierniki (KPI)
-                        </h3>
-
-                        <div id="kpi-container" class="space-y-6">
-                            <!-- KPIs will be injected here by JS -->
-                        </div>
-
-                        <div class="mt-8 bg-slate-800/50 p-4 rounded-2xl border border-slate-700">
-                            <p class="text-xs text-slate-400 mb-2 uppercase font-bold tracking-widest text-center">
-                                Dodatkowe kryterium</p>
-                            <p class="text-sm text-center font-medium">Pozytywny feedback zespołu i klientów dotyczący
-                                jakości.</p>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i data-lucide="trending-up" class="w-6 h-6 text-indigo-400"></i> Mierniki (KPI)</h3>
+                    <div id="kpi-container" class="space-y-6"></div>
                     <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl"></div>
                 </div>
-
-
             </div>
         </div>
 
-        <!-- NEW: Interactive Checklist Section -->
+        <!-- Checklista -->
         <div class="mt-12 bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
                     <h2 class="text-2xl font-bold text-slate-900">Checklista Moich Postępów</h2>
-                    <p class="text-slate-500">Monitoruj realizację konkretnych zadań operacyjnych</p>
+                    <p class="text-slate-500" id="status-msg">Skonfiguruj ustawienia GitHub, aby włączyć auto-nadpisywanie pliku.</p>
                 </div>
                 <div class="flex gap-2">
-                    <input type="text" id="task-input" placeholder="Wpisz nowe zadanie..."
-                        class="px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full md:w-64">
-                    <button onclick="addTask()"
-                        class="bg-indigo-600 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-indigo-700 transition-colors flex items-center gap-2 shadow-sm">
+                    <input type="text" id="task-input" placeholder="Wpisz nowe zadanie..." class="px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full md:w-64">
+                    <button onclick="addTask()" class="bg-indigo-600 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-indigo-700 transition-colors flex items-center gap-2 shadow-sm">
                         <i data-lucide="plus" class="w-4 h-4"></i> Dodaj
                     </button>
                 </div>
             </div>
-
-            <div id="checklist-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- Checklist items injected here -->
-            </div>
-
+            <div id="checklist-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
             <div id="empty-checklist" class="hidden text-center py-12 text-slate-400">
                 <i data-lucide="clipboard-list" class="w-12 h-12 mx-auto mb-4 opacity-20"></i>
-                <p>Brak aktywnych zadań. Dodaj coś powyżej!</p>
+                <p>Brak aktywnych zadań.</p>
             </div>
         </div>
 
-        <footer class="mt-12 text-center text-slate-400 text-sm pb-8">
-            Personal Development Roadmap • 2026
-        </footer>
+        <footer class="mt-12 text-center text-slate-400 text-sm pb-8">Personal Development Roadmap • 2026</footer>
     </div>
 
-    <script>
+    <script id="main-script">
         const data = {
             seo: {
                 title: "Rozwój Kompetencji Seniorskich SEO",
@@ -151,60 +126,46 @@
                 vision: "Samodzielne prowadzenie zaawansowanych działań technicznych, contentowych i biznesowych na poziomie Senior.",
                 icon: "rocket",
                 actions: [
-                    { title: "Migracje techniczne", desc: "Ugruntowanie wiedzy na temat migracji i przeprowadzenie pełnego procesu migracji z uwzględnieniem najwaniejszych zasad SEO", icon: "rocket" },
-                    { title: "Semantic SEO", desc: "Nauka i wdrożenie strategii semantycznego SEO", icon: "search" },
-                    { title: "Optymalizacja pracy", desc: "Optymalizacja procesów przy użyciu narzędzi AI", icon: "brain-circuit" },
-                    { title: "Edukacja zespołu", desc: "Dzielenie się unikalną wiedzą oraz poruszanie dyskusji na temat SEO i GEO", icon: "graduation-cap" },
-                    { title: "Relacje biznesowe", desc: "Aktywny udział w spotkaniach live z klientem.", icon: "users" },
-                    { title: "Ekspertyza w branży hotelarskiej", desc: "Wychodzenie z inicjatywami wykraczającymi poza standardowe działania SEO", icon: "award" },
+                    { title: "Migracje techniczne", desc: "Przeprowadzenie pełnego procesu migracji zgodnie z zasadami SEO.", icon: "rocket" },
+                    { title: "Semantic SEO", desc: "Wdrożenie strategii semantycznego SEO.", icon: "search" },
+                    { title: "Optymalizacja pracy", desc: "Wykorzystanie narzędzi AI w procesach SEO.", icon: "brain-circuit" },
+                    { title: "Edukacja zespołu", desc: "Dzielenie się wiedzą merytoryczną.", icon: "graduation-cap" },
+                    { title: "Relacje biznesowe", desc: "Aktywny udział w spotkaniach live z klientem.", icon: "users" }
                 ],
                 kpis: [
                     { label: "Migracje SEO", value: "min. 1" },
-                    { label: "Nowe Szablony", value: "min. 1" },
                     { label: "Spotkania Live", value: "min. 1" },
-                    { label: "Inicjatywy (AI/Zesp.)", value: "min. 3" }
+                    { label: "Inicjatywy AI", value: "min. 3" }
                 ]
             },
             analytics: {
                 title: "Analityka & Looker Studio Ninja",
                 deadline: "Lipiec 2026",
-                vision: "Pełna samodzielność w tworzeniu zaawansowanych dashboardów wspierających zespół.",
+                vision: "Samodzielność w tworzeniu dashboardów Looker Studio.",
                 icon: "bar-chart-3",
                 actions: [
-                    { title: "Szkolenia Specjalistyczne", desc: "Ukończenie kursów z zakresu integracji i wizualizacji danych.", icon: "trending-up" },
-                    { title: "Analiza Potrzeb", desc: "Identyfikacja 'wąskich gardeł' w raportowaniu zespołu.", icon: "search" },
-                    { title: "Projekt & Development", desc: "Stworzenie dedykowanego dashboardu Looker Studio.", icon: "bar-chart-3" },
-                    { title: "Wdrożenie i Feedback", desc: "Implementacja narzędzia do codziennej pracy.", icon: "check-circle-2" }
+                    { title: "Szkolenia", desc: "Ukończenie kursów z integracji danych.", icon: "trending-up" },
+                    { title: "Projektowanie", desc: "Stworzenie dashboardu dla zespołu.", icon: "bar-chart-3" }
                 ],
-                kpis: [
-                    { label: "Ukończone Szkolenia", value: "min. 1" },
-                    { label: "Wdrożone Dashboardy", value: "min. 1" },
-                    { label: "Użyteczność (Feedback)", value: "Wysoka" }
-                ]
+                kpis: [{ label: "Szkolenia", value: "min. 1" }, { label: "Dashboardy", value: "min. 1" }]
             }
         };
 
-        // --- Checklist Logic ---
+        // --- DANE CHECKLISTY (BĘDĄ NADPISYWANE W KODZIE PRZY KAŻDYM ZAPISIE) ---
         let tasks = [
-            { id: 1, text: "Stworzenie analizy contentu", completed: false },
-            { id: 2, text: "Przeprowadzenie migracji od A do Z", completed: false },
-            { id: 3, text: "Spotkanie na żywo z klientem", completed: false },
-            { id: 4, text: "Ukończenie kursu Semantic SEO", completed: false },
-            { id: 5, text: "Ukończenie kursu Looker Studio", completed: false },
-            { id: 6, text: "Stworzenie dla klienta rekomendacji poza-seowych", completed: false },
-            { id: 7, text: "Stworzenie przydatnego modelu AI", completed: false },
+            { "id": 1, "text": "Stworzenie analizy contentu", "completed": false },
+            { "id": 2, "text": "Przeprowadzenie migracji od A do Z", "completed": false },
+            { "id": 3, "text": "Spotkanie na żywo z klientem", "completed": false },
+            { "id": 4, "text": "Ukończenie kursu Semantic SEO", "completed": false },
+            { "id": 5, "text": "Ukończenie kursu Looker Studio", "completed": false },
+            { "id": 6, "text": "Stworzenie dla klienta rekomendacji poza-seowych", "completed": false },
+            { "id": 7, "text": "Stworzenie przydatnego modelu AI", "completed": false }
         ];
 
         function renderChecklist() {
             const container = document.getElementById('checklist-container');
             const emptyState = document.getElementById('empty-checklist');
-
-            if (tasks.length === 0) {
-                container.innerHTML = '';
-                emptyState.classList.remove('hidden');
-                return;
-            }
-
+            if (tasks.length === 0) { container.innerHTML = ''; emptyState.classList.remove('hidden'); return; }
             emptyState.classList.add('hidden');
             container.innerHTML = tasks.map(task => `
                 <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
@@ -214,94 +175,120 @@
                         </button>
                         <span class="text-sm font-medium ${task.completed ? 'completed-task' : 'text-slate-700'}">${task.text}</span>
                     </div>
-                    <button onclick="deleteTask(${task.id})" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100">
-                        <i data-lucide="trash-2" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            `).join('');
-
+                    <button onclick="deleteTask(${task.id})" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                </div>`).join('');
             lucide.createIcons();
         }
 
-        function addTask() {
-            const input = document.getElementById('task-input');
-            const text = input.value.trim();
-            if (text) {
-                tasks.push({ id: Date.now(), text: text, completed: false });
-                input.value = '';
-                renderChecklist();
+        function addTask() { 
+            const input = document.getElementById('task-input'); 
+            if (input.value.trim()) { 
+                tasks.push({ id: Date.now(), text: input.value.trim(), completed: false }); 
+                input.value = ''; 
+                renderChecklist(); 
+                maybeAutoSync(); 
+            }
+        }
+        function toggleTask(id) { tasks = tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t); renderChecklist(); maybeAutoSync(); }
+        function deleteTask(id) { tasks = tasks.filter(t => t.id !== id); renderChecklist(); maybeAutoSync(); }
+
+        // --- GITHUB SYNC LOGIC ---
+        function toggleSettings() { document.getElementById('settings-modal').classList.toggle('active'); }
+        
+        function saveSettings() {
+            localStorage.setItem('gh-token', document.getElementById('gh-token').value);
+            localStorage.setItem('gh-owner', document.getElementById('gh-owner').value);
+            localStorage.setItem('gh-repo', document.getElementById('gh-repo').value);
+            toggleSettings();
+            updateStatusMsg();
+        }
+
+        function updateStatusMsg() {
+            const hasConfig = localStorage.getItem('gh-token') && localStorage.getItem('gh-owner') && localStorage.getItem('gh-repo');
+            document.getElementById('status-msg').textContent = hasConfig ? "Auto-zapis aktywny." : "Skonfiguruj ustawienia, aby włączyć auto-nadpisywanie.";
+        }
+
+        async function syncToGitHub() {
+            const token = localStorage.getItem('gh-token');
+            const owner = localStorage.getItem('gh-owner');
+            const repo = localStorage.getItem('gh-repo');
+            const btn = document.getElementById('sync-btn');
+
+            if (!token || !owner || !repo) { toggleSettings(); return; }
+
+            btn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Zapisywanie...';
+            lucide.createIcons();
+
+            try {
+                // 1. Pobierz SHA pliku index.html (wymagane przez API GitHub do nadpisania)
+                const url = `https://api.github.com/repos/${owner}/${repo}/contents/index.html`;
+                const getRes = await fetch(url, { 
+                    headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' } 
+                });
+                
+                if (!getRes.ok) throw new Error("Nie znaleziono pliku index.html");
+                const fileData = await getRes.json();
+                const sha = fileData.sha;
+
+                // 2. Przygotuj nowy kod HTML (zamień starą tablicę tasks na nową w stringu)
+                let fullHtml = document.documentElement.outerHTML;
+                const tasksString = JSON.stringify(tasks, null, 12);
+                const taskRegex = /let tasks = \s*\[[\s\S]*?\];/;
+                const updatedContent = '<!DOCTYPE html>\n' + fullHtml.replace(taskRegex, `let tasks = ${tasksString};`);
+
+                // 3. Wyślij aktualizację (PUT) - obsługa polskich znaków przez Base64
+                const putRes = await fetch(url, {
+                    method: 'PUT',
+                    headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: "Auto-save checklist progress",
+                        content: btoa(unescape(encodeURIComponent(updatedContent))),
+                        sha: sha
+                    })
+                });
+
+                if (putRes.ok) {
+                    btn.innerHTML = '<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Zapisano!';
+                    setTimeout(() => { btn.innerHTML = '<i data-lucide="refresh-cw" class="w-4 h-4"></i> Synchronizuj z GitHub'; lucide.createIcons(); }, 3000);
+                } else {
+                    throw new Error("Błąd zapisu");
+                }
+            } catch (e) {
+                console.error(e);
+                btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4 text-red-400"></i> Błąd zapisu';
+                setTimeout(() => { btn.innerHTML = '<i data-lucide="refresh-cw" class="w-4 h-4"></i> Synchronizuj z GitHub'; lucide.createIcons(); }, 3000);
             }
         }
 
-        function toggleTask(id) {
-            tasks = tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t);
-            renderChecklist();
-        }
+        // Auto-synchronizacja tylko jeśli token jest ustawiony
+        function maybeAutoSync() { if(localStorage.getItem('gh-token')) syncToGitHub(); }
 
-        function deleteTask(id) {
-            tasks = tasks.filter(t => t.id !== id);
-            renderChecklist();
-        }
-
-        // Listen for Enter key on task input
-        document.getElementById('task-input')?.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') addTask();
-        });
-
-        // --- Tabs Logic ---
         function switchTab(tab) {
             const current = data[tab];
-
-            // Update Buttons
             document.getElementById('btn-seo').className = tab === 'seo' ? 'px-6 py-2 rounded-lg text-sm font-semibold transition-all tab-active' : 'px-6 py-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:bg-slate-50';
             document.getElementById('btn-analytics').className = tab === 'analytics' ? 'px-6 py-2 rounded-lg text-sm font-semibold transition-all tab-active' : 'px-6 py-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:bg-slate-50';
-
-            // Update Text content
             document.getElementById('main-title').textContent = current.title;
-            document.getElementById('deadline').textContent = current.deadline;
             document.getElementById('vision').textContent = `"${current.vision}"`;
-
-            // Update Icon
             document.getElementById('bg-icon').innerHTML = `<i data-lucide="${current.icon}" size="120"></i>`;
-
-            // Update Actions
-            const actionsContainer = document.getElementById('actions-container');
-            actionsContainer.innerHTML = current.actions.map(action => `
-                <div class="group flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all cursor-default">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                        <i data-lucide="${action.icon}" class="w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-800">${action.title}</h4>
-                        <p class="text-sm text-slate-500 leading-snug">${action.desc}</p>
-                    </div>
-                </div>
-            `).join('');
-
-            // Update KPIs
-            const kpiContainer = document.getElementById('kpi-container');
-            kpiContainer.innerHTML = current.kpis.map(kpi => `
+            document.getElementById('actions-container').innerHTML = current.actions.map(a => `
+                <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all">
+                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><i data-lucide="${a.icon}" class="w-5 h-5"></i></div>
+                    <div><h4 class="font-bold text-slate-800">${a.title}</h4><p class="text-sm text-slate-500 leading-snug">${a.desc}</p></div>
+                </div>`).join('');
+            document.getElementById('kpi-container').innerHTML = current.kpis.map(k => `
                 <div class="border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-                    <div class="flex justify-between items-end mb-2">
-                        <span class="text-slate-400 text-sm">${kpi.label}</span>
-                        <span class="text-indigo-400 font-bold">${kpi.value}</span>
-                    </div>
-                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                        <div class="h-full bg-indigo-500 rounded-full" style="width: 100%"></div>
-                    </div>
-                </div>
-            `).join('');
-
-            // Re-render icons
+                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">${k.label}</span><span class="text-indigo-400 font-bold">${k.value}</span></div>
+                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 rounded-full" style="width: 100%"></div></div>
+                </div>`).join('');
             lucide.createIcons();
         }
 
-        // Initialize with SEO and Checklist
         window.onload = () => {
-            switchTab('seo');
-            renderChecklist();
+            document.getElementById('gh-token').value = localStorage.getItem('gh-token') || '';
+            document.getElementById('gh-owner').value = localStorage.getItem('gh-owner') || '';
+            document.getElementById('gh-repo').value = localStorage.getItem('gh-repo') || '';
+            switchTab('seo'); renderChecklist(); updateStatusMsg();
         };
     </script>
 </body>
-
 </html>
