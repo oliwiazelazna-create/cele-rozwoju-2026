@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="pl" data-lt-installed="true"><head>
+<html lang="pl">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan Rozwoju Zawodowego 2026</title>
@@ -7,6 +9,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
         body { font-family: 'Inter', sans-serif; }
         .tab-active { background-color: #4f46e5; color: white; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
         .completed-task { text-decoration: line-through; color: #94a3b8; }
@@ -14,33 +17,45 @@
         .btn-github:hover { background-color: #000; transform: translateY(-1px); }
         .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 50; align-items: center; justify-content: center; }
         .modal.active { display: flex; }
+        
+        /* Animacja ładowania */
+        .spinner { animation: rotate 2s linear infinite; }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.-bottom-10{bottom:-2.5rem}.-right-10{right:-2.5rem}.right-0{right:0px}.top-0{top:0px}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-1{margin-right:0.25rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.mt-8{margin-top:2rem}.mb-2{margin-bottom:0.5rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-12{height:3rem}.h-4{height:1rem}.h-40{height:10rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-1\.5{height:0.375rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-4{width:1rem}.w-40{width:10rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.max-w-5xl{max-width:64rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-2xl{border-radius:1rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.border-indigo-600{--tw-border-opacity:1;border-color:rgb(79 70 229 / var(--tw-border-opacity, 1))}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-indigo-500\/10{background-color:rgb(99 102 241 / 0.1)}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-indigo-500{--tw-bg-opacity:1;background-color:rgb(99 102 241 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pb-8{padding-bottom:2rem}.pb-4{padding-bottom:1rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-indigo-500{--tw-text-opacity:1;color:rgb(99 102 241 / var(--tw-text-opacity, 1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.opacity-20{opacity:0.2}.opacity-5{opacity:0.05}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.last\:border-0:last-child{border-width:0px}.last\:pb-0:last-child{padding-bottom:0px}.hover\:border-indigo-200:hover{--tw-border-opacity:1;border-color:rgb(199 210 254 / var(--tw-border-opacity, 1))}.hover\:border-indigo-500:hover{--tw-border-opacity:1;border-color:rgb(99 102 241 / var(--tw-border-opacity, 1))}.hover\:border-slate-100:hover{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.hover\:bg-indigo-700:hover{--tw-bg-opacity:1;background-color:rgb(67 56 202 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:text-red-500:hover{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-indigo-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(99 102 241 / var(--tw-ring-opacity, 1))}.group:hover .group-hover\:bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 768px){.md\:w-64{width:16rem}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}.md\:p-8{padding:2rem}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style><style data-emotion="css" data-s=""></style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.absolute{position:absolute}.relative{position:relative}.-bottom-10{bottom:-2.5rem}.-right-10{right:-2.5rem}.right-0{right:0px}.top-0{top:0px}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-1{margin-right:0.25rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:0.375rem}.h-12{height:3rem}.h-4{height:1rem}.h-40{height:10rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-4{width:1rem}.w-40{width:10rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.max-w-5xl{max-width:64rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-indigo-600{--tw-border-opacity:1;border-color:rgb(79 70 229 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-indigo-500{--tw-bg-opacity:1;background-color:rgb(99 102 241 / var(--tw-bg-opacity, 1))}.bg-indigo-500\/10{background-color:rgb(99 102 241 / 0.1)}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.pb-4{padding-bottom:1rem}.pb-8{padding-bottom:2rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-indigo-500{--tw-text-opacity:1;color:rgb(99 102 241 / var(--tw-text-opacity, 1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-20{opacity:0.2}.opacity-5{opacity:0.05}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.last\:border-0:last-child{border-width:0px}.last\:pb-0:last-child{padding-bottom:0px}.hover\:border-indigo-200:hover{--tw-border-opacity:1;border-color:rgb(199 210 254 / var(--tw-border-opacity, 1))}.hover\:border-indigo-500:hover{--tw-border-opacity:1;border-color:rgb(99 102 241 / var(--tw-border-opacity, 1))}.hover\:border-slate-100:hover{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.hover\:bg-indigo-700:hover{--tw-bg-opacity:1;background-color:rgb(67 56 202 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:text-red-500:hover{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-indigo-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(99 102 241 / var(--tw-ring-opacity, 1))}.group:hover .group-hover\:bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 768px){.md\:w-64{width:16rem}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}.md\:p-8{padding:2rem}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style><style data-emotion="css" data-s=""></style></head>
+</head>
 
 <body class="bg-slate-50 text-slate-900 min-h-screen p-4 md:p-8">
 
     <!-- Modal Ustawień GitHub -->
     <div id="settings-modal" class="modal p-4">
         <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl">
-            <h3 class="text-xl font-bold mb-4">Ustawienia Auto-zapisu GitHub</h3>
-            <p class="text-sm text-slate-500 mb-6">Wprowadź dane, aby plik mógł sam się nadpisywać w Twoim repozytorium.</p>
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Ustawienia GitHub</h3>
+                <button onclick="toggleSettings()" class="text-slate-400 hover:text-slate-600">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <p class="text-sm text-slate-500 mb-6">Wprowadź dane, aby umożliwić auto-nadpisywanie pliku index.html w Twoim repozytorium.</p>
             <div class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">GitHub Personal Access Token</label>
+                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Personal Access Token</label>
                     <input type="password" id="gh-token" placeholder="ghp_..." class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Użytkownik (np. oliwiazelazna-create)</label>
-                    <input type="text" id="gh-owner" placeholder="Twój login" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Użytkownik (Login)</label>
+                    <input type="text" id="gh-owner" placeholder="np. oliwiazelazna-create" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Repozytorium (np. cele-rozwoju-2026)</label>
-                    <input type="text" id="gh-repo" placeholder="Nazwa repo" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Repozytorium</label>
+                    <input type="text" id="gh-repo" placeholder="np. cele-rozwoju-2026" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Nazwa pliku w repo</label>
+                    <input type="text" id="gh-path" placeholder="index.html" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
                 </div>
             </div>
             <div class="flex gap-3 mt-8">
-                <button onclick="toggleSettings()" class="flex-1 px-4 py-2 rounded-xl border border-slate-200 font-bold hover:bg-slate-50">Anuluj</button>
-                <button onclick="saveSettings()" class="flex-1 bg-indigo-600 text-white px-4 py-2 rounded-xl font-bold hover:bg-indigo-700">Zapisz</button>
+                <button onclick="saveSettings()" class="w-full bg-indigo-600 text-white px-4 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-colors">Zapisz i aktywuj synchronizację</button>
             </div>
         </div>
     </div>
@@ -53,9 +68,11 @@
                 <p class="text-slate-500 mt-1">Planowanie ścieżki eksperckiej 2026</p>
             </div>
             <div class="flex flex-wrap gap-3 items-center">
-                <button onclick="syncToGitHub()" id="sync-btn" class="btn-github px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 shadow-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="loader-2" aria-hidden="true" class="lucide lucide-loader-2 w-4 h-4 animate-spin"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg> Zapisywanie...</button>
+                <button onclick="syncToGitHub()" id="sync-btn" class="btn-github px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 shadow-sm transition-all">
+                    <i data-lucide="refresh-cw" id="sync-icon" class="w-4 h-4"></i> Synchronizuj z GitHub
+                </button>
                 <button onclick="toggleSettings()" class="bg-white p-2 rounded-xl border border-slate-200 hover:bg-slate-50 shadow-sm text-slate-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="settings" aria-hidden="true" class="lucide lucide-settings w-5 h-5"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <i data-lucide="settings" class="w-5 h-5"></i>
                 </button>
                 <div class="flex bg-white p-1 rounded-xl shadow-sm border border-slate-200">
                     <button onclick="switchTab('seo')" id="btn-seo" class="px-6 py-2 rounded-lg text-sm font-semibold transition-all tab-active">SEO Expert</button>
@@ -65,144 +82,57 @@
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content Area -->
             <div class="lg:col-span-2 space-y-6">
                 <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-8 opacity-5" id="bg-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="rocket" aria-hidden="true" size="120" class="lucide lucide-rocket"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg></div>
+                    <div class="absolute top-0 right-0 p-8 opacity-5" id="bg-icon"><i data-lucide="rocket" size="120"></i></div>
                     <div class="flex items-center gap-3 mb-6">
                         <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Cel Główny</span>
-                        <div class="flex items-center text-slate-400 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" aria-hidden="true" class="lucide lucide-calendar w-4 h-4 mr-1"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg><span id="deadline">Grudzień 2026</span></div>
+                        <div class="flex items-center text-slate-400 text-sm"><i data-lucide="calendar" class="w-4 h-4 mr-1"></i><span id="deadline">Grudzień 2026</span></div>
                     </div>
                     <h2 class="text-2xl font-bold mb-4" id="main-title">Rozwój Kompetencji Seniorskich SEO</h2>
                     <p class="text-slate-600 leading-relaxed mb-8 text-lg italic" id="vision">"Samodzielne prowadzenie zaawansowanych działań technicznych, contentowych i biznesowych na poziomie Senior."</p>
                     <div class="space-y-4">
-                        <h3 class="font-semibold text-slate-800 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" class="lucide lucide-target w-5 h-5 text-indigo-500"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> Kluczowe Akcje:</h3>
-                        <div id="actions-container" class="grid gap-3">
-                <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="rocket" aria-hidden="true" class="lucide lucide-rocket w-5 h-5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg></div>
-                    <div><h4 class="font-bold text-slate-800">Migracje techniczne</h4><p class="text-sm text-slate-500 leading-snug">Przeprowadzenie pełnego procesu migracji zgodnie z zasadami SEO.</p></div>
-                </div>
-                <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" aria-hidden="true" class="lucide lucide-search w-5 h-5"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg></div>
-                    <div><h4 class="font-bold text-slate-800">Semantic SEO</h4><p class="text-sm text-slate-500 leading-snug">Wdrożenie strategii semantycznego SEO.</p></div>
-                </div>
-                <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="brain-circuit" aria-hidden="true" class="lucide lucide-brain-circuit w-5 h-5"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M9 13a4.5 4.5 0 0 0 3-4"></path><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path><path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path><path d="M6 18a4 4 0 0 1-1.967-.516"></path><path d="M12 13h4"></path><path d="M12 18h6a2 2 0 0 1 2 2v1"></path><path d="M12 8h8"></path><path d="M16 8V5a2 2 0 0 1 2-2"></path><circle cx="16" cy="13" r=".5"></circle><circle cx="18" cy="3" r=".5"></circle><circle cx="20" cy="21" r=".5"></circle><circle cx="20" cy="8" r=".5"></circle></svg></div>
-                    <div><h4 class="font-bold text-slate-800">Optymalizacja pracy</h4><p class="text-sm text-slate-500 leading-snug">Wykorzystanie narzędzi AI w procesach SEO.</p></div>
-                </div>
-                <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="graduation-cap" aria-hidden="true" class="lucide lucide-graduation-cap w-5 h-5"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg></div>
-                    <div><h4 class="font-bold text-slate-800">Edukacja zespołu</h4><p class="text-sm text-slate-500 leading-snug">Dzielenie się wiedzą merytoryczną.</p></div>
-                </div>
-                <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" aria-hidden="true" class="lucide lucide-users w-5 h-5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
-                    <div><h4 class="font-bold text-slate-800">Relacje biznesowe</h4><p class="text-sm text-slate-500 leading-snug">Aktywny udział w spotkaniach live z klientem.</p></div>
-                </div></div>
+                        <h3 class="font-semibold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-5 h-5 text-indigo-500"></i> Kluczowe Akcje:</h3>
+                        <div id="actions-container" class="grid gap-3"></div>
                     </div>
                 </div>
             </div>
 
+            <!-- Sidebar / Metrics -->
             <div class="space-y-6">
                 <div class="bg-slate-900 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
-                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trending-up" aria-hidden="true" class="lucide lucide-trending-up w-6 h-6 text-indigo-400"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg> Mierniki (KPI)</h3>
-                    <div id="kpi-container" class="space-y-6">
-                <div class="border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">Migracje SEO</span><span class="text-indigo-400 font-bold">min. 1</span></div>
-                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 rounded-full" style="width: 100%"></div></div>
-                </div>
-                <div class="border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">Spotkania Live</span><span class="text-indigo-400 font-bold">min. 1</span></div>
-                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 rounded-full" style="width: 100%"></div></div>
-                </div>
-                <div class="border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">Inicjatywy AI</span><span class="text-indigo-400 font-bold">min. 3</span></div>
-                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 rounded-full" style="width: 100%"></div></div>
-                </div></div>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i data-lucide="trending-up" class="w-6 h-6 text-indigo-400"></i> Mierniki (KPI)</h3>
+                        <div id="kpi-container" class="space-y-6"></div>
+                        <div class="mt-8 bg-slate-800/50 p-4 rounded-2xl border border-slate-700">
+                            <p class="text-xs text-slate-400 mb-2 uppercase font-bold tracking-widest text-center">Dodatkowe kryterium</p>
+                            <p class="text-sm text-center font-medium">Pozytywny feedback zespołu i klientów dotyczący jakości.</p>
+                        </div>
+                    </div>
                     <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl"></div>
                 </div>
             </div>
         </div>
 
-        <!-- Checklista -->
+        <!-- Checklista Section -->
         <div class="mt-12 bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
                     <h2 class="text-2xl font-bold text-slate-900">Checklista Moich Postępów</h2>
-                    <p class="text-slate-500" id="status-msg">Auto-zapis aktywny.</p>
+                    <p class="text-slate-500" id="status-msg">Monitoruj realizację konkretnych zadań operacyjnych</p>
                 </div>
                 <div class="flex gap-2">
                     <input type="text" id="task-input" placeholder="Wpisz nowe zadanie..." class="px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full md:w-64">
                     <button onclick="addTask()" class="bg-indigo-600 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-indigo-700 transition-colors flex items-center gap-2 shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus w-4 h-4"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg> Dodaj
+                        <i data-lucide="plus" class="w-4 h-4"></i> Dodaj
                     </button>
                 </div>
             </div>
-            <div id="checklist-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(1)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Stworzenie analizy contentu</span>
-                    </div>
-                    <button onclick="deleteTask(1)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(2)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Przeprowadzenie migracji od A do Z</span>
-                    </div>
-                    <button onclick="deleteTask(2)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(3)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Spotkanie na żywo z klientem</span>
-                    </div>
-                    <button onclick="deleteTask(3)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(4)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Ukończenie kursu Semantic SEO</span>
-                    </div>
-                    <button onclick="deleteTask(4)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(5)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Ukończenie kursu Looker Studio</span>
-                    </div>
-                    <button onclick="deleteTask(5)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(6)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Stworzenie dla klienta rekomendacji poza-seowych</span>
-                    </div>
-                    <button onclick="deleteTask(6)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(7)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Stworzenie przydatnego modelu AI</span>
-                    </div>
-                    <button onclick="deleteTask(7)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div></div>
+            <div id="checklist-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
             <div id="empty-checklist" class="hidden text-center py-12 text-slate-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-list" aria-hidden="true" class="lucide lucide-clipboard-list w-12 h-12 mx-auto mb-4 opacity-20"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg>
-                <p>Brak aktywnych zadań.</p>
+                <i data-lucide="clipboard-list" class="w-12 h-12 mx-auto mb-4 opacity-20"></i>
+                <p>Brak aktywnych zadań. Dodaj coś powyżej!</p>
             </div>
         </div>
 
@@ -217,69 +147,49 @@
                 vision: "Samodzielne prowadzenie zaawansowanych działań technicznych, contentowych i biznesowych na poziomie Senior.",
                 icon: "rocket",
                 actions: [
-                    { title: "Migracje techniczne", desc: "Przeprowadzenie pełnego procesu migracji zgodnie z zasadami SEO.", icon: "rocket" },
-                    { title: "Semantic SEO", desc: "Wdrożenie strategii semantycznego SEO.", icon: "search" },
-                    { title: "Optymalizacja pracy", desc: "Wykorzystanie narzędzi AI w procesach SEO.", icon: "brain-circuit" },
-                    { title: "Edukacja zespołu", desc: "Dzielenie się wiedzą merytoryczną.", icon: "graduation-cap" },
-                    { title: "Relacje biznesowe", desc: "Aktywny udział w spotkaniach live z klientem.", icon: "users" }
+                    { title: "Migracje techniczne", desc: "Ugruntowanie wiedzy na temat migracji i przeprowadzenie pełnego procesu migracji z uwzględnieniem najwaniejszych zasad SEO", icon: "rocket" },
+                    { title: "Semantic SEO", desc: "Nauka i wdrożenie strategii semantycznego SEO", icon: "search" },
+                    { title: "Optymalizacja pracy", desc: "Optymalizacja procesów przy użyciu narzędzi AI", icon: "brain-circuit" },
+                    { title: "Edukacja zespołu", desc: "Dzielenie się unikalną wiedzą oraz poruszanie dyskusji na temat SEO i GEO", icon: "graduation-cap" },
+                    { title: "Relacje biznesowe", desc: "Aktywny udział w spotkaniach live z klientem.", icon: "users" },
+                    { title: "Ekspertyza w branży hotelarskiej", desc: "Wychodzenie z inicjatywami wykraczającymi poza standardowe działania SEO", icon: "award" },
                 ],
                 kpis: [
                     { label: "Migracje SEO", value: "min. 1" },
+                    { label: "Nowe Szablony", value: "min. 1" },
                     { label: "Spotkania Live", value: "min. 1" },
-                    { label: "Inicjatywy AI", value: "min. 3" }
+                    { label: "Inicjatywy (AI/Zesp.)", value: "min. 3" }
                 ]
             },
             analytics: {
                 title: "Analityka & Looker Studio Ninja",
                 deadline: "Lipiec 2026",
-                vision: "Samodzielność w tworzeniu dashboardów Looker Studio.",
+                vision: "Pełna samodzielność w tworzeniu zaawansowanych dashboardów wspierających zespół.",
                 icon: "bar-chart-3",
                 actions: [
-                    { title: "Szkolenia", desc: "Ukończenie kursów z integracji danych.", icon: "trending-up" },
-                    { title: "Projektowanie", desc: "Stworzenie dashboardu dla zespołu.", icon: "bar-chart-3" }
+                    { title: "Szkolenia Specjalistyczne", desc: "Ukończenie kursów z zakresu integracji i wizualizacji danych.", icon: "trending-up" },
+                    { title: "Analiza Potrzeb", desc: "Identyfikacja 'wąskich gardeł' w raportowaniu zespołu.", icon: "search" },
+                    { title: "Projekt & Development", desc: "Stworzenie dedykowanego dashboardu Looker Studio.", icon: "bar-chart-3" },
+                    { title: "Wdrożenie i Feedback", desc: "Implementacja narzędzia do codziennej pracy.", icon: "check-circle-2" }
                 ],
-                kpis: [{ label: "Szkolenia", value: "min. 1" }, { label: "Dashboardy", value: "min. 1" }]
+                kpis: [
+                    { label: "Ukończone Szkolenia", value: "min. 1" },
+                    { label: "Wdrożone Dashboardy", value: "min. 1" },
+                    { label: "Użyteczność (Feedback)", value: "Wysoka" }
+                ]
             }
         };
 
-        // --- DANE CHECKLISTY (BĘDĄ NADPISYWANE W KODZIE PRZY KAŻDYM ZAPISIE) ---
+        // --- Checklist Logic (BĘDĄ NADPISYWANE W KODZIE PRZY ZAPISIE) ---
         let tasks = [
-          {
-                    "id": 1,
-                    "text": "Stworzenie analizy contentu",
-                    "completed": false
-          },
-          {
-                    "id": 2,
-                    "text": "Przeprowadzenie migracji od A do Z",
-                    "completed": false
-          },
-          {
-                    "id": 3,
-                    "text": "Spotkanie na żywo z klientem",
-                    "completed": false
-          },
-          {
-                    "id": 4,
-                    "text": "Ukończenie kursu Semantic SEO",
-                    "completed": false
-          },
-          {
-                    "id": 5,
-                    "text": "Ukończenie kursu Looker Studio",
-                    "completed": false
-          },
-          {
-                    "id": 6,
-                    "text": "Stworzenie dla klienta rekomendacji poza-seowych",
-                    "completed": false
-          },
-          {
-                    "id": 7,
-                    "text": "Stworzenie przydatnego modelu AI",
-                    "completed": false
-          }
-];
+            { "id": 1, "text": "Stworzenie analizy contentu", "completed": false },
+            { "id": 2, "text": "Przeprowadzenie migracji od A do Z", "completed": false },
+            { "id": 3, "text": "Spotkanie na żywo z klientem", "completed": false },
+            { "id": 4, "text": "Ukończenie kursu Semantic SEO", "completed": false },
+            { "id": 5, "text": "Ukończenie kursu Looker Studio", "completed": false },
+            { "id": 6, "text": "Stworzenie dla klienta rekomendacji poza-seowych", "completed": false },
+            { "id": 7, "text": "Stworzenie przydatnego modelu AI", "completed": false }
+        ];
 
         function renderChecklist() {
             const container = document.getElementById('checklist-container');
@@ -301,12 +211,7 @@
 
         function addTask() { 
             const input = document.getElementById('task-input'); 
-            if (input.value.trim()) { 
-                tasks.push({ id: Date.now(), text: input.value.trim(), completed: false }); 
-                input.value = ''; 
-                renderChecklist(); 
-                maybeAutoSync(); 
-            }
+            if (input.value.trim()) { tasks.push({ id: Date.now(), text: input.value.trim(), completed: false }); input.value = ''; renderChecklist(); maybeAutoSync(); }
         }
         function toggleTask(id) { tasks = tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t); renderChecklist(); maybeAutoSync(); }
         function deleteTask(id) { tasks = tasks.filter(t => t.id !== id); renderChecklist(); maybeAutoSync(); }
@@ -315,73 +220,79 @@
         function toggleSettings() { document.getElementById('settings-modal').classList.toggle('active'); }
         
         function saveSettings() {
-            localStorage.setItem('gh-token', document.getElementById('gh-token').value);
-            localStorage.setItem('gh-owner', document.getElementById('gh-owner').value);
-            localStorage.setItem('gh-repo', document.getElementById('gh-repo').value);
+            localStorage.setItem('gh-token', document.getElementById('gh-token').value.trim());
+            localStorage.setItem('gh-owner', document.getElementById('gh-owner').value.trim());
+            localStorage.setItem('gh-repo', document.getElementById('gh-repo').value.trim());
+            localStorage.setItem('gh-path', document.getElementById('gh-path').value.trim() || 'index.html');
             toggleSettings();
             updateStatusMsg();
+            syncToGitHub();
         }
 
         function updateStatusMsg() {
             const hasConfig = localStorage.getItem('gh-token') && localStorage.getItem('gh-owner') && localStorage.getItem('gh-repo');
-            document.getElementById('status-msg').textContent = hasConfig ? "Auto-zapis aktywny." : "Skonfiguruj ustawienia, aby włączyć auto-nadpisywanie.";
+            const msg = document.getElementById('status-msg');
+            msg.textContent = hasConfig ? "Auto-zapis aktywny." : "Skonfiguruj ustawienia GitHub (zębatka), aby włączyć auto-zapis.";
+            msg.className = hasConfig ? "text-emerald-600 font-medium" : "text-slate-500";
         }
 
         async function syncToGitHub() {
             const token = localStorage.getItem('gh-token');
             const owner = localStorage.getItem('gh-owner');
             const repo = localStorage.getItem('gh-repo');
+            const path = localStorage.getItem('gh-path') || 'index.html';
             const btn = document.getElementById('sync-btn');
+            const icon = document.getElementById('sync-icon');
 
-            if (!token || !owner || !repo) { toggleSettings(); return; }
+            if (!token || !owner || !repo) return;
 
-            btn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Zapisywanie...';
-            lucide.createIcons();
+            btn.classList.add('opacity-50', 'pointer-events-none');
+            icon.classList.add('spinner');
 
             try {
-                // 1. Pobierz SHA pliku index.html (wymagane przez API GitHub do nadpisania)
-                const url = `https://api.github.com/repos/${owner}/${repo}/contents/index.html`;
-                const getRes = await fetch(url, { 
-                    headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' } 
-                });
+                const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+                const getRes = await fetch(url, { headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' } });
                 
-                if (!getRes.ok) throw new Error("Nie znaleziono pliku index.html");
+                if (!getRes.ok) throw new Error(`Błąd: ${getRes.status}`);
                 const fileData = await getRes.json();
                 const sha = fileData.sha;
 
-                // 2. Przygotuj nowy kod HTML (zamień starą tablicę tasks na nową w stringu)
+                // Przygotuj kod (zamień tablicę tasks w stringu)
                 let fullHtml = document.documentElement.outerHTML;
                 const tasksString = JSON.stringify(tasks, null, 12);
                 const taskRegex = /let tasks = \s*\[[\s\S]*?\];/;
                 const updatedContent = '<!DOCTYPE html>\n' + fullHtml.replace(taskRegex, `let tasks = ${tasksString};`);
 
-                // 3. Wyślij aktualizację (PUT) - obsługa polskich znaków przez Base64
                 const putRes = await fetch(url, {
                     method: 'PUT',
                     headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        message: "Auto-save checklist progress",
+                        message: "Auto-save career plan progress",
                         content: btoa(unescape(encodeURIComponent(updatedContent))),
                         sha: sha
                     })
                 });
 
                 if (putRes.ok) {
-                    btn.innerHTML = '<i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Zapisano!';
-                    setTimeout(() => { btn.innerHTML = '<i data-lucide="refresh-cw" class="w-4 h-4"></i> Synchronizuj z GitHub'; lucide.createIcons(); }, 3000);
-                } else {
-                    throw new Error("Błąd zapisu");
+                    btn.innerHTML = '<i data-lucide="check" class="w-4 h-4"></i> Zapisano!';
+                    setTimeout(() => { 
+                        btn.innerHTML = '<i data-lucide="refresh-cw" id="sync-icon" class="w-4 h-4"></i> Synchronizuj z GitHub'; 
+                        lucide.createIcons(); 
+                    }, 3000);
                 }
             } catch (e) {
                 console.error(e);
                 btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4 text-red-400"></i> Błąd zapisu';
-                setTimeout(() => { btn.innerHTML = '<i data-lucide="refresh-cw" class="w-4 h-4"></i> Synchronizuj z GitHub'; lucide.createIcons(); }, 3000);
+            } finally {
+                btn.classList.remove('opacity-50', 'pointer-events-none');
+                icon.classList.remove('spinner');
+                lucide.createIcons();
             }
         }
 
-        // Auto-synchronizacja tylko jeśli token jest ustawiony
         function maybeAutoSync() { if(localStorage.getItem('gh-token')) syncToGitHub(); }
 
+        // --- Tabs Logic ---
         function switchTab(tab) {
             const current = data[tab];
             document.getElementById('btn-seo').className = tab === 'seo' ? 'px-6 py-2 rounded-lg text-sm font-semibold transition-all tab-active' : 'px-6 py-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:bg-slate-50';
@@ -389,14 +300,14 @@
             document.getElementById('main-title').textContent = current.title;
             document.getElementById('vision').textContent = `"${current.vision}"`;
             document.getElementById('bg-icon').innerHTML = `<i data-lucide="${current.icon}" size="120"></i>`;
-            document.getElementById('actions-container').innerHTML = current.actions.map(a => `
-                <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><i data-lucide="${a.icon}" class="w-5 h-5"></i></div>
-                    <div><h4 class="font-bold text-slate-800">${a.title}</h4><p class="text-sm text-slate-500 leading-snug">${a.desc}</p></div>
+            document.getElementById('actions-container').innerHTML = current.actions.map(action => `
+                <div class="group flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all cursor-default">
+                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><i data-lucide="${action.icon}" class="w-5 h-5"></i></div>
+                    <div><h4 class="font-bold text-slate-800">${action.title}</h4><p class="text-sm text-slate-500 leading-snug">${action.desc}</p></div>
                 </div>`).join('');
-            document.getElementById('kpi-container').innerHTML = current.kpis.map(k => `
+            document.getElementById('kpi-container').innerHTML = current.kpis.map(kpi => `
                 <div class="border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">${k.label}</span><span class="text-indigo-400 font-bold">${k.value}</span></div>
+                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">${kpi.label}</span><span class="text-indigo-400 font-bold">${kpi.value}</span></div>
                     <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 rounded-full" style="width: 100%"></div></div>
                 </div>`).join('');
             lucide.createIcons();
@@ -406,9 +317,11 @@
             document.getElementById('gh-token').value = localStorage.getItem('gh-token') || '';
             document.getElementById('gh-owner').value = localStorage.getItem('gh-owner') || '';
             document.getElementById('gh-repo').value = localStorage.getItem('gh-repo') || '';
-            switchTab('seo'); renderChecklist(); updateStatusMsg();
+            document.getElementById('gh-path').value = localStorage.getItem('gh-path') || 'index.html';
+            switchTab('seo');
+            renderChecklist();
+            updateStatusMsg();
         };
     </script>
-
-
-<style id="igor_ext_nofollow">a[rel~='nofollow'],a[rel~='sponsored'],a[rel~='ugc']{outline:.14em dotted red !important;outline-offset:.2em;}a[rel~='nofollow'] img,a[rel~='sponsored'] img,a[rel~='ugc'] img{outline:2px dotted red !important;outline-offset:.2em;}</style></body><style id="igor_ext_nofollow">a[rel~='nofollow'],a[rel~='sponsored'],a[rel~='ugc']{outline:.14em dotted red !important;outline-offset:.2em;}a[rel~='nofollow'] img,a[rel~='sponsored'] img,a[rel~='ugc'] img{outline:2px dotted red !important;outline-offset:.2em;}</style></html>
+</body>
+</html>
