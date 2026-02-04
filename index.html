@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="pl"><head>
+<html lang="pl">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan Rozwoju Zawodowego 2026</title>
@@ -11,16 +13,14 @@
         body { font-family: 'Inter', sans-serif; }
         .tab-active { background-color: #4f46e5; color: white; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
         .completed-task { text-decoration: line-through; color: #94a3b8; }
-        .btn-github { background-color: #24292f; color: white; transition: all 0.2s; }
+        .btn-github { background-color: #24292f; color: white; transition: all 0.2s; border: 1px solid #374151; }
         .btn-github:hover { background-color: #000; transform: translateY(-1px); }
         .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 50; align-items: center; justify-content: center; }
         .modal.active { display: flex; }
-        
-        /* Animacja ładowania */
         .spinner { animation: rotate 2s linear infinite; }
         @keyframes rotate { 100% { transform: rotate(360deg); } }
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.-bottom-10{bottom:-2.5rem}.-right-10{right:-2.5rem}.right-0{right:0px}.top-0{top:0px}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-1{margin-right:0.25rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-12{height:3rem}.h-4{height:1rem}.h-40{height:10rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-1\.5{height:0.375rem}.h-full{height:100%}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-4{width:1rem}.w-40{width:10rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.max-w-5xl{max-width:64rem}.max-w-md{max-width:28rem}.cursor-default{cursor:default}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-indigo-500\/10{background-color:rgb(99 102 241 / 0.1)}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-800\/50{background-color:rgb(30 41 59 / 0.5)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-indigo-500{--tw-bg-opacity:1;background-color:rgb(99 102 241 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-8{padding-bottom:2rem}.pb-4{padding-bottom:1rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-indigo-500{--tw-text-opacity:1;color:rgb(99 102 241 / var(--tw-text-opacity, 1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.opacity-20{opacity:0.2}.opacity-5{opacity:0.05}.opacity-0{opacity:0}.opacity-50{opacity:0.5}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.blur-3xl{--tw-blur:blur(64px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.last\:border-0:last-child{border-width:0px}.last\:pb-0:last-child{padding-bottom:0px}.hover\:border-indigo-200:hover{--tw-border-opacity:1;border-color:rgb(199 210 254 / var(--tw-border-opacity, 1))}.hover\:border-indigo-500:hover{--tw-border-opacity:1;border-color:rgb(99 102 241 / var(--tw-border-opacity, 1))}.hover\:border-slate-100:hover{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.hover\:bg-indigo-700:hover{--tw-bg-opacity:1;background-color:rgb(67 56 202 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:text-slate-600:hover{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.hover\:text-red-500:hover{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.hover\:shadow-md:hover{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-indigo-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(99 102 241 / var(--tw-ring-opacity, 1))}.group:hover .group-hover\:bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 768px){.md\:w-64{width:16rem}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}.md\:p-8{padding:2rem}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+</head>
 
 <body class="bg-slate-50 text-slate-900 min-h-screen p-4 md:p-8">
 
@@ -30,22 +30,22 @@
             <div class="flex justify-between items-center mb-4">
                 <h3 class="text-xl font-bold">Ustawienia GitHub</h3>
                 <button onclick="toggleSettings()" class="text-slate-400 hover:text-slate-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" aria-hidden="true" class="lucide lucide-x w-6 h-6"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                    <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
-            <p class="text-sm text-slate-500 mb-6">Wprowadź dane, aby umożliwić nadpisywanie pliku index.html w Twoim repozytorium po kliknięciu przycisku.</p>
+            <p class="text-sm text-slate-500 mb-6">Wprowadź dane, aby umożliwić nadpisywanie pliku index.html w Twoim repozytorium.</p>
             <div class="space-y-4">
                 <div>
                     <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Personal Access Token</label>
                     <input type="password" id="gh-token" placeholder="ghp_..." class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Użytkownik (Login)</label>
-                    <input type="text" id="gh-owner" placeholder="np. oliwiazelazna-create" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+                    <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Użytkownik (np. oliwiazelazna-create)</label>
+                    <input type="text" id="gh-owner" placeholder="Login GitHub" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
                 </div>
                 <div>
                     <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Repozytorium</label>
-                    <input type="text" id="gh-repo" placeholder="np. cele-rozwoju-2026" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
+                    <input type="text" id="gh-repo" placeholder="cele-rozwoju-2026" class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none">
                 </div>
                 <div>
                     <label class="block text-xs font-bold uppercase text-slate-400 mb-1">Nazwa pliku w repo</label>
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="flex gap-3 mt-8">
-                <button onclick="saveSettings()" class="w-full bg-indigo-600 text-white px-4 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-colors">Zapisz ustawienia</button>
+                <button onclick="saveSettings()" class="w-full bg-indigo-600 text-white px-4 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-lg">Zapisz ustawienia</button>
             </div>
         </div>
     </div>
@@ -66,9 +66,12 @@
                 <p class="text-slate-500 mt-1">Planowanie ścieżki eksperckiej 2026</p>
             </div>
             <div class="flex flex-wrap gap-3 items-center">
-                <button onclick="syncToGitHub()" id="sync-btn" class="btn-github px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 shadow-sm transition-all opacity-50 pointer-events-none"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="refresh-cw" aria-hidden="true" id="sync-icon" class="lucide lucide-refresh-cw w-4 h-4 spinner"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg> Synchronizuj z GitHub</button>
+                <!-- Przycisk naprawiony (aktywny) -->
+                <button onclick="syncToGitHub()" id="sync-btn" class="btn-github px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 shadow-sm transition-all">
+                    <i data-lucide="refresh-cw" id="sync-icon" class="w-4 h-4"></i> Synchronizuj z GitHub
+                </button>
                 <button onclick="toggleSettings()" class="bg-white p-2 rounded-xl border border-slate-200 hover:bg-slate-50 shadow-sm text-slate-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="settings" aria-hidden="true" class="lucide lucide-settings w-5 h-5"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    <i data-lucide="settings" class="w-5 h-5"></i>
                 </button>
                 <div class="flex bg-white p-1 rounded-xl shadow-sm border border-slate-200">
                     <button onclick="switchTab('seo')" id="btn-seo" class="px-6 py-2 rounded-lg text-sm font-semibold transition-all tab-active">SEO Expert</button>
@@ -80,65 +83,25 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2 space-y-6">
                 <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-8 opacity-5" id="bg-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="rocket" aria-hidden="true" size="120" class="lucide lucide-rocket"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg></div>
+                    <div class="absolute top-0 right-0 p-8 opacity-5" id="bg-icon"><i data-lucide="rocket" size="120"></i></div>
                     <div class="flex items-center gap-3 mb-6">
                         <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Cel Główny</span>
-                        <div class="flex items-center text-slate-400 text-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" aria-hidden="true" class="lucide lucide-calendar w-4 h-4 mr-1"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg><span id="deadline">Grudzień 2026</span></div>
+                        <div class="flex items-center text-slate-400 text-sm"><i data-lucide="calendar" class="w-4 h-4 mr-1"></i><span id="deadline">Grudzień 2026</span></div>
                     </div>
                     <h2 class="text-2xl font-bold mb-4" id="main-title">Rozwój Kompetencji Seniorskich SEO</h2>
                     <p class="text-slate-600 leading-relaxed mb-8 text-lg italic" id="vision">"Samodzielne prowadzenie zaawansowanych działań technicznych, contentowych i biznesowych na poziomie Senior."</p>
                     <div class="space-y-4">
-                        <h3 class="font-semibold text-slate-800 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="target" aria-hidden="true" class="lucide lucide-target w-5 h-5 text-indigo-500"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> Kluczowe Akcje:</h3>
-                        <div id="actions-container" class="grid gap-3">
-                <div class="group flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all cursor-default">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="rocket" aria-hidden="true" class="lucide lucide-rocket w-5 h-5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg></div>
-                    <div><h4 class="font-bold text-slate-800">Migracje techniczne</h4><p class="text-sm text-slate-500 leading-snug">Ugruntowanie wiedzy na temat migracji i przeprowadzenie pełnego procesu migracji z uwzględnieniem najwaniejszych zasad SEO</p></div>
-                </div>
-                <div class="group flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all cursor-default">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="search" aria-hidden="true" class="lucide lucide-search w-5 h-5"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg></div>
-                    <div><h4 class="font-bold text-slate-800">Semantic SEO</h4><p class="text-sm text-slate-500 leading-snug">Nauka i wdrożenie strategii semantycznego SEO</p></div>
-                </div>
-                <div class="group flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all cursor-default">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="brain-circuit" aria-hidden="true" class="lucide lucide-brain-circuit w-5 h-5"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M9 13a4.5 4.5 0 0 0 3-4"></path><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path><path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path><path d="M6 18a4 4 0 0 1-1.967-.516"></path><path d="M12 13h4"></path><path d="M12 18h6a2 2 0 0 1 2 2v1"></path><path d="M12 8h8"></path><path d="M16 8V5a2 2 0 0 1 2-2"></path><circle cx="16" cy="13" r=".5"></circle><circle cx="18" cy="3" r=".5"></circle><circle cx="20" cy="21" r=".5"></circle><circle cx="20" cy="8" r=".5"></circle></svg></div>
-                    <div><h4 class="font-bold text-slate-800">Optymalizacja pracy</h4><p class="text-sm text-slate-500 leading-snug">Optymalizacja procesów przy użyciu narzędzi AI</p></div>
-                </div>
-                <div class="group flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all cursor-default">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="graduation-cap" aria-hidden="true" class="lucide lucide-graduation-cap w-5 h-5"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg></div>
-                    <div><h4 class="font-bold text-slate-800">Edukacja zespołu</h4><p class="text-sm text-slate-500 leading-snug">Dzielenie się unikalną wiedzą oraz poruszanie dyskusji na temat SEO i GEO</p></div>
-                </div>
-                <div class="group flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all cursor-default">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" aria-hidden="true" class="lucide lucide-users w-5 h-5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
-                    <div><h4 class="font-bold text-slate-800">Relacje biznesowe</h4><p class="text-sm text-slate-500 leading-snug">Aktywny udział w spotkaniach online i live z klientem.</p></div>
-                </div>
-                <div class="group flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all cursor-default">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="award" aria-hidden="true" class="lucide lucide-award w-5 h-5"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg></div>
-                    <div><h4 class="font-bold text-slate-800">Ekspertyza w branży hotelarskiej</h4><p class="text-sm text-slate-500 leading-snug">Wychodzenie z inicjatywami wykraczającymi poza standardowe działania SEO</p></div>
-                </div></div>
+                        <h3 class="font-semibold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-5 h-5 text-indigo-500"></i> Kluczowe Akcje:</h3>
+                        <div id="actions-container" class="grid gap-3"></div>
                     </div>
                 </div>
             </div>
 
             <div class="space-y-6">
-                <div class="bg-slate-900 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
+                <div class="bg-slate-900 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden border border-slate-800">
                     <div class="relative z-10">
-                        <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trending-up" aria-hidden="true" class="lucide lucide-trending-up w-6 h-6 text-indigo-400"><path d="M16 7h6v6"></path><path d="m22 7-8.5 8.5-5-5L2 17"></path></svg> Mierniki (KPI)</h3>
-                        <div id="kpi-container" class="space-y-6">
-                <div class="border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">Migracje SEO</span><span class="text-indigo-400 font-bold">min. 1</span></div>
-                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 rounded-full" style="width: 100%"></div></div>
-                </div>
-                <div class="border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">Nowe Szablony</span><span class="text-indigo-400 font-bold">min. 1</span></div>
-                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 rounded-full" style="width: 100%"></div></div>
-                </div>
-                <div class="border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">Spotkania Live</span><span class="text-indigo-400 font-bold">min. 1</span></div>
-                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 rounded-full" style="width: 100%"></div></div>
-                </div>
-                <div class="border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">Inicjatywy (AI/Zesp.)</span><span class="text-indigo-400 font-bold">min. 3</span></div>
-                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 rounded-full" style="width: 100%"></div></div>
-                </div></div>
+                        <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i data-lucide="trending-up" class="w-6 h-6 text-indigo-400"></i> Mierniki (KPI)</h3>
+                        <div id="kpi-container" class="space-y-6"></div>
                         <div class="mt-8 bg-slate-800/50 p-4 rounded-2xl border border-slate-700">
                             <p class="text-xs text-slate-400 mb-2 uppercase font-bold tracking-widest text-center">Dodatkowe kryterium</p>
                             <p class="text-sm text-center font-medium">Pozytywny feedback zespołu i klientów dotyczący jakości.</p>
@@ -149,96 +112,23 @@
             </div>
         </div>
 
-        <!-- Checklista Section -->
         <div class="mt-12 bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                 <div>
                     <h2 class="text-2xl font-bold text-slate-900">Checklista Moich Postępów</h2>
-                    <p class="text-indigo-600 font-medium" id="status-msg">Ręczna synchronizacja gotowa.</p>
+                    <p class="text-slate-500" id="status-msg">Ręczna synchronizacja gotowa.</p>
                 </div>
                 <div class="flex gap-2">
                     <input type="text" id="task-input" placeholder="Wpisz nowe zadanie..." class="px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full md:w-64">
                     <button onclick="addTask()" class="bg-indigo-600 text-white px-6 py-2 rounded-xl text-sm font-bold hover:bg-indigo-700 transition-colors flex items-center gap-2 shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus w-4 h-4"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg> Dodaj
+                        <i data-lucide="plus" class="w-4 h-4"></i> Dodaj
                     </button>
                 </div>
             </div>
-            <div id="checklist-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(1)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Stworzenie analizy contentu</span>
-                    </div>
-                    <button onclick="deleteTask(1)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(2)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Przeprowadzenie migracji od A do Z</span>
-                    </div>
-                    <button onclick="deleteTask(2)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(3)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Spotkanie na żywo z klientem</span>
-                    </div>
-                    <button onclick="deleteTask(3)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(4)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Ukończenie kursu Semantic SEO</span>
-                    </div>
-                    <button onclick="deleteTask(4)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(5)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Ukończenie kursu Looker Studio</span>
-                    </div>
-                    <button onclick="deleteTask(5)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(6)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Stworzenie dla klienta rekomendacji poza-seowych</span>
-                    </div>
-                    <button onclick="deleteTask(6)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(7)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Stworzenie przydatnego modelu AI</span>
-                    </div>
-                    <button onclick="deleteTask(7)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div>
-                <div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl group hover:border-indigo-200 transition-all">
-                    <div class="flex items-center gap-3">
-                        <button onclick="toggleTask(1770217579120)" class="w-6 h-6 rounded-lg border-2 border-slate-300 flex items-center justify-center transition-all bg-white hover:border-indigo-500">
-                            
-                        </button>
-                        <span class="text-sm font-medium text-slate-700">Test 1</span>
-                    </div>
-                    <button onclick="deleteTask(1770217579120)" class="text-slate-300 hover:text-red-500 transition-colors p-1 opacity-0 group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="trash-2" aria-hidden="true" class="lucide lucide-trash-2 w-4 h-4"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
-                </div></div>
+            <div id="checklist-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
             <div id="empty-checklist" class="hidden text-center py-12 text-slate-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="clipboard-list" aria-hidden="true" class="lucide lucide-clipboard-list w-12 h-12 mx-auto mb-4 opacity-20"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg>
-                <p>Brak aktywnych zadań. Dodaj coś powyżej!</p>
+                <i data-lucide="clipboard-list" class="w-12 h-12 mx-auto mb-4 opacity-20"></i>
+                <p>Brak aktywnych zadań.</p>
             </div>
         </div>
 
@@ -286,49 +176,16 @@
             }
         };
 
-        // --- Checklist Logic (BĘDĄ NADPISYWANE W KODZIE PRZY ZAPISIE) ---
+        // --- Checklist Logic ---
         let tasks = [
-          {
-                    "id": 1,
-                    "text": "Stworzenie analizy contentu",
-                    "completed": false
-          },
-          {
-                    "id": 2,
-                    "text": "Przeprowadzenie migracji od A do Z",
-                    "completed": false
-          },
-          {
-                    "id": 3,
-                    "text": "Spotkanie na żywo z klientem",
-                    "completed": false
-          },
-          {
-                    "id": 4,
-                    "text": "Ukończenie kursu Semantic SEO",
-                    "completed": false
-          },
-          {
-                    "id": 5,
-                    "text": "Ukończenie kursu Looker Studio",
-                    "completed": false
-          },
-          {
-                    "id": 6,
-                    "text": "Stworzenie dla klienta rekomendacji poza-seowych",
-                    "completed": false
-          },
-          {
-                    "id": 7,
-                    "text": "Stworzenie przydatnego modelu AI",
-                    "completed": false
-          },
-          {
-                    "id": 1770217579120,
-                    "text": "Test 1",
-                    "completed": false
-          }
-];
+            { "id": 1, "text": "Stworzenie analizy contentu", "completed": false },
+            { "id": 2, "text": "Przeprowadzenie migracji od A do Z", "completed": false },
+            { "id": 3, "text": "Spotkanie na żywo z klientem", "completed": false },
+            { "id": 4, "text": "Ukończenie kursu Semantic SEO", "completed": false },
+            { "id": 5, "text": "Ukończenie kursu Looker Studio", "completed": false },
+            { "id": 6, "text": "Stworzenie dla klienta rekomendacji poza-seowych", "completed": false },
+            { "id": 7, "text": "Stworzenie przydatnego modelu AI", "completed": false }
+        ];
 
         function renderChecklist() {
             const container = document.getElementById('checklist-container');
@@ -348,7 +205,6 @@
             lucide.createIcons();
         }
 
-        // Zmodyfikowane funkcje - usunięto maybeAutoSync()
         function addTask() { 
             const input = document.getElementById('task-input'); 
             if (input.value.trim()) { 
@@ -357,18 +213,11 @@
                 renderChecklist(); 
             }
         }
-        function toggleTask(id) { 
-            tasks = tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t); 
-            renderChecklist(); 
-        }
-        function deleteTask(id) { 
-            tasks = tasks.filter(t => t.id !== id); 
-            renderChecklist(); 
-        }
+        function toggleTask(id) { tasks = tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t); renderChecklist(); }
+        function deleteTask(id) { tasks = tasks.filter(t => t.id !== id); renderChecklist(); }
 
         // --- GITHUB SYNC LOGIC ---
         function toggleSettings() { document.getElementById('settings-modal').classList.toggle('active'); }
-        
         function saveSettings() {
             localStorage.setItem('gh-token', document.getElementById('gh-token').value.trim());
             localStorage.setItem('gh-owner', document.getElementById('gh-owner').value.trim());
@@ -393,34 +242,55 @@
             const btn = document.getElementById('sync-btn');
             const icon = document.getElementById('sync-icon');
 
-            if (!token || !owner || !repo) {
-                toggleSettings();
-                return;
-            }
+            if (!token || !owner || !repo) { toggleSettings(); return; }
 
+            // Start ładowania wizualnego
             btn.classList.add('opacity-50', 'pointer-events-none');
             icon.classList.add('spinner');
 
             try {
+                // 1. Pobierz SHA pliku
                 const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
                 const getRes = await fetch(url, { headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' } });
                 
-                if (!getRes.ok) throw new Error(`Błąd: ${getRes.status}`);
+                if (!getRes.ok) throw new Error(`Błąd: Nie znaleziono pliku "${path}" w repozytorium.`);
                 const fileData = await getRes.json();
                 const sha = fileData.sha;
 
-                // Przygotuj kod (zamień tablicę tasks w stringu)
-                let fullHtml = document.documentElement.outerHTML;
+                // 2. Klonujemy dokument do "wyczyszczenia" go przed zapisem
+                const clone = document.documentElement.cloneNode(true);
+                
+                // PRZYWRACANIE IKON DO FORMACJI <I> (wywalamy wyrenderowane SVG)
+                clone.querySelectorAll('svg[data-lucide]').forEach(svg => {
+                    const iconName = svg.getAttribute('data-lucide');
+                    const i = document.createElement('i');
+                    i.setAttribute('data-lucide', iconName);
+                    svg.parentNode.replaceChild(i, svg);
+                });
+
+                // RESET STANU PRZYCISKU W KOPII (aby plik w repo nie był szary)
+                const cloneBtn = clone.querySelector('#sync-btn');
+                cloneBtn.className = 'btn-github px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2 shadow-sm transition-all';
+                const cloneIcon = clone.querySelector('#sync-icon');
+                if(cloneIcon) cloneIcon.classList.remove('spinner');
+
+                // 3. Generujemy kod HTML
+                let source = clone.outerHTML;
                 const tasksString = JSON.stringify(tasks, null, 12);
                 const taskRegex = /let tasks = \s*\[[\s\S]*?\];/;
-                const updatedContent = '<!DOCTYPE html>\n' + fullHtml.replace(taskRegex, `let tasks = ${tasksString};`);
+                const finalSource = '<!DOCTYPE html>\n' + source.replace(taskRegex, `let tasks = ${tasksString};`);
 
+                // Obsługa UTF-8 dla polskich znaków
+                const utf8Bytes = new TextEncoder().encode(finalSource);
+                const base64Content = btoa(String.fromCharCode(...utf8Bytes));
+
+                // 4. PUT na GitHub
                 const putRes = await fetch(url, {
                     method: 'PUT',
                     headers: { 'Authorization': `token ${token}`, 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        message: "Manual save of development plan progress",
-                        content: btoa(unescape(encodeURIComponent(updatedContent))),
+                        message: "Manual update of development plan",
+                        content: base64Content,
                         sha: sha
                     })
                 });
@@ -432,10 +302,10 @@
                         lucide.createIcons(); 
                     }, 3000);
                 } else {
-                    throw new Error("Błąd podczas wysyłania na GitHub");
+                    throw new Error("GitHub odrzucił zapis.");
                 }
             } catch (e) {
-                console.error(e);
+                alert(`Problem: ${e.message}`);
                 btn.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4 text-red-400"></i> Błąd zapisu';
                 setTimeout(() => { 
                     btn.innerHTML = '<i data-lucide="refresh-cw" id="sync-icon" class="w-4 h-4"></i> Synchronizuj z GitHub'; 
@@ -451,19 +321,22 @@
         // --- Tabs Logic ---
         function switchTab(tab) {
             const current = data[tab];
-            document.getElementById('btn-seo').className = tab === 'seo' ? 'px-6 py-2 rounded-lg text-sm font-semibold transition-all tab-active' : 'px-6 py-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:bg-slate-50';
-            document.getElementById('btn-analytics').className = tab === 'analytics' ? 'px-6 py-2 rounded-lg text-sm font-semibold transition-all tab-active' : 'px-6 py-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:bg-slate-50';
+            document.querySelectorAll('#btn-seo, #btn-analytics').forEach(b => b.className = 'px-6 py-2 rounded-lg text-sm font-semibold transition-all text-slate-600 hover:bg-slate-50');
+            document.getElementById(`btn-${tab}`).className = 'px-6 py-2 rounded-lg text-sm font-semibold transition-all tab-active';
+            
             document.getElementById('main-title').textContent = current.title;
             document.getElementById('vision').textContent = `"${current.vision}"`;
             document.getElementById('bg-icon').innerHTML = `<i data-lucide="${current.icon}" size="120"></i>`;
-            document.getElementById('actions-container').innerHTML = current.actions.map(action => `
+            
+            document.getElementById('actions-container').innerHTML = current.actions.map(a => `
                 <div class="group flex items-start gap-4 p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-md border border-transparent hover:border-slate-100 transition-all cursor-default">
-                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><i data-lucide="${action.icon}" class="w-5 h-5"></i></div>
-                    <div><h4 class="font-bold text-slate-800">${action.title}</h4><p class="text-sm text-slate-500 leading-snug">${action.desc}</p></div>
+                    <div class="bg-white p-2 rounded-lg shadow-sm group-hover:bg-indigo-600 group-hover:text-white transition-colors"><i data-lucide="${a.icon}" class="w-5 h-5"></i></div>
+                    <div><h4 class="font-bold text-slate-800">${a.title}</h4><p class="text-sm text-slate-500 leading-snug">${a.desc}</p></div>
                 </div>`).join('');
-            document.getElementById('kpi-container').innerHTML = current.kpis.map(kpi => `
+            
+            document.getElementById('kpi-container').innerHTML = current.kpis.map(k => `
                 <div class="border-b border-slate-800 pb-4 last:border-0 last:pb-0">
-                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">${kpi.label}</span><span class="text-indigo-400 font-bold">${kpi.value}</span></div>
+                    <div class="flex justify-between items-end mb-2"><span class="text-slate-400 text-sm">${k.label}</span><span class="text-indigo-400 font-bold">${k.value}</span></div>
                     <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 rounded-full" style="width: 100%"></div></div>
                 </div>`).join('');
             lucide.createIcons();
@@ -483,6 +356,5 @@
             updateStatusMsg();
         };
     </script>
-
-
-</body></html>
+</body>
+</html>
